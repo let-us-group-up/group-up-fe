@@ -49,6 +49,12 @@ module.exports = merge(common, {
             '@babel/preset-typescript',
             '@babel/preset-react',
           ],
+          plugins: [
+            [
+              require.resolve('babel-plugin-formatjs'),
+              { idInterpolationPattern: '[sha512:contenthash:base64:6]', ast: true },
+            ],
+          ],
         },
       },
       {

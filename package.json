@@ -10,7 +10,10 @@
     "start": "webpack serve --progress --config webpack/webpack.dev.js --open",
     "lint": "eslint ./src/**.tsx",
     "test": "echo \"Error: No tests specified\" && exit 1",
-    "pushTag": "git push && git push --tags"
+    "pushTag": "git push && git push --tags",
+    "extract": "formatjs extract 'src/**/*.ts*' --ignore **.d.ts --out-file lang/lang.json --id-interpolation-pattern '[sha512:contenthash:base64:6]' --format lang/formatter.js",
+    "compile": "formatjs compile lang/lang.json --ast --out-file lang/translations/en.json --format lang/formatter.js",
+    "syncTranslations": "node lang/sync.js"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
@@ -18,16 +21,21 @@
     "@babel/preset-env": "^7.13.9",
     "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.13.0",
+    "@formatjs/cli": "^4.2.8",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "@types/node": "^14.14.31",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-intl": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^4.14.1",
     "@typescript-eslint/parser": "^4.14.1",
     "babel-loader": "^8.2.2",
+    "babel-plugin-formatjs": "^10.2.8",
     "compression-webpack-plugin": "^7.1.2",
+    "dotenv": "^8.2.0",
     "eslint": "^7.2.0",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-formatjs": "^2.14.7",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
@@ -35,6 +43,7 @@
     "eslint-webpack-plugin": "^2.5.2",
     "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "^6.1.0",
+    "form-data": "^4.0.0",
     "html-webpack-plugin": "^5.2.0",
     "image-webpack-loader": "^7.0.1",
     "react-refresh": "^0.9.0",
@@ -47,7 +56,9 @@
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "react": "^0.0.0-experimental-27659559e",
-    "react-dom": "^0.0.0-experimental-27659559e"
+    "react-dom": "^0.0.0-experimental-27659559e",
+    "react-intl": "^5.16.0"
   }
 }

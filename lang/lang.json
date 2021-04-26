@@ -1,0 +1,17 @@
+[
+  {
+    "comment": "Main message",
+    "definition": "Let&apos;s group up FE",
+    "term": "ErzSJ8"
+  },
+  {
+    "comment": "Second message",
+    "definition": "Wow that's awesome and {value}",
+    "term": "VpoyIB"
+  },
+  {
+    "comment": "Plural",
+    "definition": "You have {itemCount, plural, =0 {no items} one {1 item} other {{itemCount} items} }.",
+    "term": "6kxKGK"
+  }
+]

@@ -62,6 +62,10 @@ module.exports = merge(common, {
             ],
             plugins: [
               require.resolve('react-refresh/babel'),
+              [
+                require.resolve('babel-plugin-formatjs'),
+                { idInterpolationPattern: '[sha512:contenthash:base64:6]', ast: true },
+              ],
             ],
           },
         }],
