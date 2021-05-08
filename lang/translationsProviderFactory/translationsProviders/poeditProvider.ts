@@ -3,7 +3,8 @@ import axios from 'axios';
 import fs from 'fs';
 import path from 'path';
 import FormData from 'form-data';
-import { defaultLanguage, translationsFolder, rootFolder } from '../../constants';
+import { defaultLanguage } from '../../constants';
+import { translationsFolder, rootFolder } from './constants';
 import { IProvider } from '../IProvider';
 import defaultLangMessages from '../../lang.json';
 

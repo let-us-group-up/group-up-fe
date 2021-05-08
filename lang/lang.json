@@ -10,13 +10,13 @@
     "term": "VpoyIB"
   },
   {
-    "comment": "Hi",
-    "definition": "So...",
-    "term": "IZm9BK"
-  },
-  {
     "comment": "Plural",
     "definition": "You have {itemCount, plural, =0 {no items} one {1 item} other {{itemCount} items} }.",
     "term": "6kxKGK"
+  },
+  {
+    "comment": "Language display",
+    "definition": "Current language is {language}",
+    "term": "ZUYNio"
   }
 ]

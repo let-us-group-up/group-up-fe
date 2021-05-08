@@ -1,33 +1,20 @@
 import { FC, useState } from 'react';
-import { IntlProvider, FormattedMessage } from 'react-intl';
-import enMessages from '../lang/translations/en.json';
-import ruMessages from '../lang/translations/ru.json';
-
-enum LANGUAGE {
-  EN = 'en',
-  RU = 'ru',
-}
-const defaultLanguage = LANGUAGE.EN;
-
-const messages = {
-  [LANGUAGE.EN]: enMessages,
-  [LANGUAGE.RU]: ruMessages,
-};
+import { FormattedMessage } from 'react-intl';
+import { LANGUAGE } from '../lang/constants';
+import { useLanguage } from './languageProvider';
 
 
 const App: FC = () => {
-  const [language, setLanguage] = useState<LANGUAGE>(defaultLanguage);
   const [count, setCount] = useState(0);
+  const [language, changeLanguage] = useLanguage();
 
   return (
-    <IntlProvider messages={messages[language]} locale={language} defaultLocale={defaultLanguage}>
+    <main>
       <h1>
         <FormattedMessage defaultMessage="Let&apos;s group up FE" description="Main message" />
       </h1>
 
       <FormattedMessage defaultMessage="Wow that's awesome and {value}" description="Second message" values={{ value: 'cool' }} />
-
-      <FormattedMessage defaultMessage="So..." description="Hi" />
 
       <br />
       <br />
@@ -62,11 +49,19 @@ const App: FC = () => {
       <br />
       <br />
 
-      <select onChange={({ target }) => setLanguage(target.value as LANGUAGE)}>
+      <h4>
+        <FormattedMessage
+          defaultMessage="Current language is {language}"
+          description="Language display"
+          values={{ language }}
+        />
+      </h4>
+      <br />
+      <select onChange={({ target }) => changeLanguage(target.value as LANGUAGE)}>
         <option value={LANGUAGE.EN}>EN</option>
         <option value={LANGUAGE.RU}>RU</option>
       </select>
-    </IntlProvider>
+    </main>
   );
 };
 

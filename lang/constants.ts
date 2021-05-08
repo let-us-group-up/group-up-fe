@@ -4,7 +4,3 @@ export enum LANGUAGE {
 }
 
 export const defaultLanguage = LANGUAGE.EN;
-
-export const translationsFolder = 'translations';
-
-export const rootFolder = 'lang';
