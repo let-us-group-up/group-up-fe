@@ -11,10 +11,14 @@ const App: FC = () => {
   return (
     <main>
       <h1>
-        <FormattedMessage defaultMessage="Let&apos;s group up FE" description="Main message" />
+        <FormattedMessage defaultMessage="Let's group up FE" description="Main message" />
       </h1>
 
-      <FormattedMessage defaultMessage="Wow that's awesome and {value}" description="Second message" values={{ value: 'cool' }} />
+      <FormattedMessage
+        defaultMessage="Wow that's awesome and {value}"
+        description="Second message"
+        values={{ value: 'cool' }}
+      />
 
       <br />
       <br />
