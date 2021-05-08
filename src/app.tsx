@@ -27,6 +27,8 @@ const App: FC = () => {
 
       <FormattedMessage defaultMessage="Wow that's awesome and {value}" description="Second message" values={{ value: 'cool' }} />
 
+      <FormattedMessage defaultMessage="So..." description="Hi" />
+
       <br />
       <br />
 
