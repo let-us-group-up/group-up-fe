@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { LANGUAGE } from '../lang/constants';
+import { Language } from '../lang/constants';
 import { useLanguage } from './languageProvider';
 
 
@@ -61,9 +61,9 @@ const App: FC = () => {
         />
       </h4>
       <br />
-      <select onChange={({ target }) => changeLanguage(target.value as LANGUAGE)}>
-        <option value={LANGUAGE.EN}>EN</option>
-        <option value={LANGUAGE.RU}>RU</option>
+      <select onChange={({ target }) => changeLanguage(target.value as Language)}>
+        <option value={Language.En}>EN</option>
+        <option value={Language.Ru}>RU</option>
       </select>
     </main>
   );

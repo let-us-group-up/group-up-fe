@@ -7,33 +7,33 @@ import {
   FC,
 } from 'react';
 import { IntlProvider } from 'react-intl';
-import { LANGUAGE, defaultLanguage } from '../lang/constants';
+import { Language, defaultLanguage } from '../lang/constants';
 import enMessages from '../lang/translations/en.json';
 import ruMessages from '../lang/translations/ru.json';
 
 
 const messages = {
-  [LANGUAGE.EN]: enMessages,
-  [LANGUAGE.RU]: ruMessages,
+  [Language.En]: enMessages,
+  [Language.Ru]: ruMessages,
 };
 
 
-type ChangeLanguage = (newLanguage: LANGUAGE) => void;
+type ChangeLanguage = (newLanguage: Language) => void;
 
-type LanguageContext = [LANGUAGE, ChangeLanguage];
+type LanguageContext = [Language, ChangeLanguage];
 
 export const LanguageContext = createContext<LanguageContext>([
   defaultLanguage,
-  (newLanguage: LANGUAGE) => newLanguage,
+  (newLanguage: Language) => newLanguage,
 ]);
 
 export const useLanguage = (): LanguageContext => useContext(LanguageContext);
 
 
 const LanguageProvider: FC = ({ children }) => {
-  const [language, setLanguage] = useState<LANGUAGE>(defaultLanguage);
+  const [language, setLanguage] = useState<Language>(defaultLanguage);
 
-  const handleChangeLanguage: ChangeLanguage = useCallback((newLanguage: LANGUAGE) => {
+  const handleChangeLanguage: ChangeLanguage = useCallback((newLanguage: Language) => {
     setLanguage(newLanguage);
   }, []);
 

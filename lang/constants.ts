@@ -1,6 +1,6 @@
-export enum LANGUAGE {
-  EN = 'en',
-  RU = 'ru',
+export enum Language {
+  En = 'en',
+  Ru = 'ru',
 }
 
-export const defaultLanguage = LANGUAGE.EN;
+export const defaultLanguage = Language.En;

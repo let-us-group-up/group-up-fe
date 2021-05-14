@@ -1,4 +1,4 @@
-import { LANGUAGE, defaultLanguage } from './constants';
+import { Language, defaultLanguage } from './constants';
 import TranslationsProviderFactory from './translationsProviderFactory';
 
 
@@ -7,10 +7,10 @@ const main = async () => {
 
   const translationsProvider = TranslationsProviderFactory(translationsProviderName);
   await translationsProvider.uploadDefaultLanguageTranslations();
-  Promise.all(Object.keys(LANGUAGE).map(async (key) => {
-    const languageKey = key as keyof typeof LANGUAGE;
-    if (LANGUAGE[languageKey] === defaultLanguage) return;
-    await translationsProvider.exportTranslations(LANGUAGE[languageKey]);
+  Promise.all(Object.keys(Language).map(async (key) => {
+    const languageKey = key as keyof typeof Language;
+    if (Language[languageKey] === defaultLanguage) return;
+    await translationsProvider.exportTranslations(Language[languageKey]);
   }));
 };
 
