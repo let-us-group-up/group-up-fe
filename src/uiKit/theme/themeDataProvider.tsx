@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, ComponentProps } from 'react';
 import {
   ITheme,
   IThemeOptions,
@@ -27,6 +27,35 @@ export function makeStyles<
     ? () => ClassNameMap<ClassKey>
     : (props: Props) => ClassNameMap<ClassKey>;
 }
+
+interface Styled {
+  <C extends FC<ComponentProps<C>>>(component: C): <
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    StyleProps extends Record<string, unknown> = {},
+    Theme = ITheme,
+  >(callback: (params: {
+      theme: Theme;
+    }
+      & ComponentProps<C>
+      & StyleProps
+  ) => string) => FC<ComponentProps<C> & StyleProps>;
+
+  <Tag extends keyof JSX.IntrinsicElements>(tag: Tag): <
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    StyleProps extends Record<string, unknown> = {},
+    Theme = ITheme,
+  >(callback: (params: {
+      theme: Theme;
+    }
+      & JSX.IntrinsicElements[Tag]
+      & StyleProps
+  ) => string) => FC<JSX.IntrinsicElements[Tag] & StyleProps>;
+}
+
+// Can be any styled implementation (e.g. emotion, styled-components or your own)
+// Any for proper handling of an overload
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const styled: Styled = (component: any) => () => component;
 
 export interface ThemeDataProviderProps {
   theme: ProviderTheme;
