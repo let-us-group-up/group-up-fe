@@ -222,7 +222,7 @@ export interface TransitionsOptions {
 
 // #region ZIndex
 
-export enum ZIndexVariants {
+export enum ZIndexVariant {
   MobileStepper = 'mobileStepper',
   SpeedDial = 'speedDial',
   AppBar = 'appBar',
@@ -232,9 +232,9 @@ export enum ZIndexVariants {
   Tooltip = 'tooltip',
 }
 
-export type ZIndexOptions = Record<ZIndexVariants, number>;
+export type ZIndexOptions = Record<ZIndexVariant, number>;
 
-export type ZIndex = Record<ZIndexVariants, number>;
+export type ZIndex = Record<ZIndexVariant, number>;
 
 // #endregion
 
