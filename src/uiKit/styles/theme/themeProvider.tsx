@@ -25,14 +25,14 @@ const themes: IThemes = Object.entries(themesOptions).reduce<IThemes>((
   return acc;
 }, {} as IThemes);
 
-export const defaultThemeName = ThemeName.Light;
+const defaultThemeName = ThemeName.Light;
 
 
 type ChangeThemeName = (newTheme: ThemeName) => void;
 
 type ThemeNameContext = [ThemeName, ChangeThemeName];
 
-export const ThemeNameContext = createContext<ThemeNameContext>([
+const ThemeNameContext = createContext<ThemeNameContext>([
   defaultThemeName,
   (newTheme: ThemeName) => newTheme,
 ]);
