@@ -1,0 +1,74 @@
+{
+  "6kxKGK": [
+    {
+      "type": 0,
+      "value": "You have "
+    },
+    {
+      "offset": 0,
+      "options": {
+        "=0": {
+          "value": [
+            {
+              "type": 0,
+              "value": "no items"
+            }
+          ]
+        },
+        "one": {
+          "value": [
+            {
+              "type": 0,
+              "value": "1 item"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 1,
+              "value": "itemCount"
+            },
+            {
+              "type": 0,
+              "value": " items"
+            }
+          ]
+        }
+      },
+      "pluralType": "cardinal",
+      "type": 6,
+      "value": "itemCount"
+    },
+    {
+      "type": 0,
+      "value": "."
+    }
+  ],
+  "Mlh9AI": [
+    {
+      "type": 0,
+      "value": "Let's group up FE"
+    }
+  ],
+  "VpoyIB": [
+    {
+      "type": 0,
+      "value": "Wow that's awesome and "
+    },
+    {
+      "type": 1,
+      "value": "value"
+    }
+  ],
+  "ZUYNio": [
+    {
+      "type": 0,
+      "value": "Current language is "
+    },
+    {
+      "type": 1,
+      "value": "language"
+    }
+  ]
+}

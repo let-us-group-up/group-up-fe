@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import { FormattedMessage } from 'react-intl';
+import { useIntl } from './intl';
 import { Language } from '../lang/constants';
 import { useLanguage } from './languageProvider';
 
@@ -7,18 +7,21 @@ import { useLanguage } from './languageProvider';
 const App: FC = () => {
   const [count, setCount] = useState(0);
   const [language, changeLanguage] = useLanguage();
+  const intl = useIntl();
 
   return (
     <main>
       <h1>
-        <FormattedMessage defaultMessage="Let's group up FE" description="Main message" />
+        {intl.formatMessage({
+          defaultMessage: "Let's group up FE",
+          description: 'Main message',
+        })}
       </h1>
 
-      <FormattedMessage
-        defaultMessage="Wow that's awesome and {value}"
-        description="Second message"
-        values={{ value: 'cool' }}
-      />
+      {intl.formatMessage({
+        defaultMessage: "Wow that's awesome and {value}",
+        description: 'Second message',
+      }, { value: 'cool' })}
 
       <br />
       <br />
@@ -38,27 +41,25 @@ const App: FC = () => {
         -
       </button>
       <br />
-      <FormattedMessage
-        defaultMessage={`
+      {intl.formatMessage({
+        defaultMessage: `
           You have {itemCount, plural,
             =0 {no items}
             one {1 item}
             other {{itemCount} items}
           }.
-        `}
-        description="Plural"
-        values={{ itemCount: count }}
-      />
+        `,
+        description: 'Plural',
+      }, { itemCount: count })}
 
       <br />
       <br />
 
       <h4>
-        <FormattedMessage
-          defaultMessage="Current language is {language}"
-          description="Language display"
-          values={{ language }}
-        />
+        {intl.formatMessage({
+          defaultMessage: 'Current language is {language}',
+          description: 'Language display',
+        }, { language })}
       </h4>
       <br />
       <select onChange={({ target }) => changeLanguage(target.value as Language)}>

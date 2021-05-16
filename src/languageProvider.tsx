@@ -6,13 +6,15 @@ import {
   useContext,
   FC,
 } from 'react';
-import { IntlProvider } from 'react-intl';
+import { IntlProvider, IntlProviderMessages } from './intl';
 import { Language, defaultLanguage } from '../lang/constants';
-import enMessages from '../lang/translations/en.json';
-import ruMessages from '../lang/translations/ru.json';
+import enMessages from '../lang/compiledTranslations/en.json';
+import ruMessages from '../lang/compiledTranslations/ru.json';
 
 
-const messages = {
+type IMessages = Record<Language, IntlProviderMessages>;
+
+const messages: IMessages = {
   [Language.En]: enMessages,
   [Language.Ru]: ruMessages,
 };

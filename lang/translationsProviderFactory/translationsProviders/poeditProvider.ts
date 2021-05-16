@@ -6,7 +6,7 @@ import FormData from 'form-data';
 import { defaultLanguage } from '../../constants';
 import { translationsFolder, rootFolder } from './constants';
 import { IProvider } from '../IProvider';
-import defaultLangMessages from '../../lang.json';
+import { Translations } from '../../ITranslations';
 
 dotenv.config();
 
@@ -21,6 +21,12 @@ const uploadDefaultLanguageTranslations: IProvider['uploadDefaultLanguageTransla
   if (!token) throw new Error('Token is not specified');
   if (!projectId) throw new Error('Project ID is not specified');
 
+  const defaultLangMessages = fs.readFileSync(path.resolve(
+    rootFolder,
+    translationsFolder,
+    `${defaultLanguage}.json`,
+  ));
+
   const formData = new FormData();
   formData.append('api_token', token);
   formData.append('id', projectId);
@@ -28,7 +34,7 @@ const uploadDefaultLanguageTranslations: IProvider['uploadDefaultLanguageTransla
   formData.append('language', defaultLanguage);
   formData.append('overwrite', 1);
   formData.append('sync_terms', 1);
-  formData.append('file', JSON.stringify(defaultLangMessages), 'lang.json');
+  formData.append('file', defaultLangMessages, `${defaultLanguage}.json`);
   await axios.post(`${url}/projects/upload`, formData, {
     headers: formData.getHeaders(),
   });
@@ -38,7 +44,12 @@ const uploadDefaultLanguageTranslations: IProvider['uploadDefaultLanguageTransla
 const exportTranslations: IProvider['exportTranslations'] = async (language) => {
   const { data } = await axios.post(`${url}/projects/export`, `api_token=${token}&id=${projectId}&language=${language}&type=key_value_json`);
   const { data: file } = await axios.get(data.result.url);
-  fs.writeFile(path.resolve(rootFolder, translationsFolder, `${language}.json`), JSON.stringify(file), (error) => {
+
+  const translations: Translations = Object.entries<string>(file).map((
+    [key, value],
+  ) => ({ term: key, definition: value }));
+
+  fs.writeFile(path.resolve(rootFolder, translationsFolder, `${language}.json`), JSON.stringify(translations), (error) => {
     if (error) {
       // eslint-disable-next-line no-console
       console.error(error);

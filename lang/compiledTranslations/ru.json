@@ -1,0 +1,74 @@
+{
+  "6kxKGK": [
+    {
+      "type": 0,
+      "value": "И так "
+    },
+    {
+      "offset": 0,
+      "options": {
+        "=0": {
+          "value": [
+            {
+              "type": 0,
+              "value": "ничего"
+            }
+          ]
+        },
+        "one": {
+          "value": [
+            {
+              "type": 0,
+              "value": "1 предмет"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 1,
+              "value": "itemCount"
+            },
+            {
+              "type": 0,
+              "value": " предметов"
+            }
+          ]
+        }
+      },
+      "pluralType": "cardinal",
+      "type": 6,
+      "value": "itemCount"
+    },
+    {
+      "type": 0,
+      "value": "."
+    }
+  ],
+  "Mlh9AI": [
+    {
+      "type": 0,
+      "value": "Let's group up FE RU"
+    }
+  ],
+  "VpoyIB": [
+    {
+      "type": 0,
+      "value": "Few, I hope it works "
+    },
+    {
+      "type": 1,
+      "value": "value"
+    }
+  ],
+  "ZUYNio": [
+    {
+      "type": 0,
+      "value": "Текущий язык - "
+    },
+    {
+      "type": 1,
+      "value": "language"
+    }
+  ]
+}
