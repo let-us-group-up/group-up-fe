@@ -62,7 +62,10 @@ const App: FC = () => {
         }, { language })}
       </h4>
       <br />
-      <select onChange={({ target }) => changeLanguage(target.value as Language)}>
+      <select
+        defaultValue={language}
+        onChange={({ target }) => changeLanguage(target.value as Language)}
+      >
         <option value={Language.En}>EN</option>
         <option value={Language.Ru}>RU</option>
       </select>

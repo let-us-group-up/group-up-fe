@@ -61,6 +61,7 @@ module.exports = merge(common, {
               ],
             ],
             plugins: [
+              require.resolve('@babel/plugin-transform-runtime'),
               require.resolve('react-refresh/babel'),
               [
                 require.resolve('babel-plugin-formatjs'),

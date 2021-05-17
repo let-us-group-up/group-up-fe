@@ -1,9 +1,9 @@
 import {
   FormattedMessage as ReactIntlFormattedMessage,
 } from 'react-intl';
-import { FormattedMessage } from './IIntl';
+import { FormattedMessage as FormattedMessageComponent } from './IIntl';
 
-const FormattedMessage: FormattedMessage = ({
+const FormattedMessage: FormattedMessageComponent = ({
   defaultMessage,
   description,
   values,

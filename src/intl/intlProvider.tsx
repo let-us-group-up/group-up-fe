@@ -2,11 +2,11 @@ import {
   IntlProvider as ReactIntlIntlProvider,
   MessageFormatElement,
 } from 'react-intl';
-import { IntlProvider } from './IIntl';
+import { IntlProvider as IntlProviderComponent } from './IIntl';
 
 export type IntlProviderMessages = Record<string, Array<MessageFormatElement>>;
 
-const IntlProvider: IntlProvider<IntlProviderMessages> = ({
+const IntlProvider: IntlProviderComponent<IntlProviderMessages> = ({
   messages,
   locale,
   defaultLocale,
