@@ -36,6 +36,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.json'],
+    alias: {
+      '@formatjs/icu-messageformat-parser':
+        '@formatjs/icu-messageformat-parser/no-parser',
+    },
   },
   optimization: {
     runtimeChunk: true,
