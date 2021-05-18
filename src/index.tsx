@@ -1,8 +1,9 @@
 import ReactDOM from 'react-dom';
+import { Language, defaultLanguage } from '../lang/constants';
 import LanguageProvider from './languageProvider';
 import App from './app';
 import browserStorage from './browserStorage';
-import { Language, defaultLanguage } from '../lang/constants';
+import { Router } from './router';
 import { localeStoreKey } from './constants';
 
 const root = document.getElementById('root') as HTMLElement;
@@ -23,7 +24,9 @@ const bootstrapApplication = async (locale: Language, mainDiv: HTMLElement) => {
   const messages = await loadLocaleData(locale);
   ReactDOM.unstable_createRoot(mainDiv).render(
     <LanguageProvider locale={locale} messages={messages}>
-      <App />
+      <Router>
+        <App />
+      </Router>
     </LanguageProvider>,
   );
 };
