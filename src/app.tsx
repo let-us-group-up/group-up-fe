@@ -1,11 +1,11 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { Language } from '../lang/constants';
 import { useIntl } from './intl';
 import { useLanguage } from './languageProvider';
 import { Routes, Route, Link } from './router';
 
 
-const App: FC = () => {
+const App: React.FC = () => {
   const [count, setCount] = useState(0);
   const [language, changeLanguage] = useLanguage();
   const intl = useIntl();

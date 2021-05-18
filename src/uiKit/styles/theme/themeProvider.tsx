@@ -4,7 +4,6 @@ import {
   useCallback,
   useMemo,
   useContext,
-  FC,
 } from 'react';
 import Adapter, { AdapterTheme } from '../adapter';
 import themesOptions, { ThemeName } from './themesOptions';
@@ -40,10 +39,7 @@ const ThemeNameContext = createContext<ThemeNameContext>([
 export const useThemeName = (): ThemeNameContext => useContext(ThemeNameContext);
 
 
-export const { styled } = Adapter;
-
-
-const ThemeProvider: FC = ({ children }) => {
+const ThemeProvider: React.FC = ({ children }) => {
   const [themeName, setThemeName] = useState<ThemeName>(defaultThemeName);
 
   const handleChangeThemeName: ChangeThemeName = useCallback((newThemeName: ThemeName) => {

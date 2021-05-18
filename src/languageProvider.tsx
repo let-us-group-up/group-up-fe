@@ -3,7 +3,6 @@ import {
   useCallback,
   useMemo,
   useContext,
-  FC,
 } from 'react';
 import { IntlProvider, IntlProviderMessages } from './intl';
 import browserStorage from './browserStorage';
@@ -28,7 +27,7 @@ export interface LanguageProviderProps {
   locale: Language;
 }
 
-const LanguageProvider: FC<LanguageProviderProps> = ({
+const LanguageProvider: React.FC<LanguageProviderProps> = ({
   messages,
   locale,
   children,
