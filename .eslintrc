@@ -40,7 +40,7 @@
     "@typescript-eslint/no-unused-vars": ["error"],
     "react/prop-types": 0,
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
-    "import/no-unresolved": [2, { "ignore": ["^config$", "^csstype$"] }],
+    "import/no-unresolved": [2, { "ignore": ["^config$"] }],
     "import/extensions": [2, {
       "ts": "never",
       "tsx": "never",
