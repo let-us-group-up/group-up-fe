@@ -1,8 +1,39 @@
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
+
+import { graphql } from 'react-relay';
+import { useLazyLoadQuery } from 'react-relay/hooks';
+import { AppQuery } from 'graphql-types/AppQuery.graphql';
+
 import { Language } from '../lang/constants';
 import { useIntl } from './intl';
-import { useLanguage } from './languageProvider';
+import { useLanguage } from './LanguageProvider';
 import { Routes, Route, Link } from './router';
+
+// Define a query
+const userQuery = graphql`
+  query AppQuery($id: ID!) {
+    user(id: $id) {
+      _id
+      email
+    }
+  }
+`;
+
+const UserView: React.FC = () => {
+  const response = useLazyLoadQuery<AppQuery>(userQuery, { id: '6060cf5da9c9c12a83bc05a5' });
+
+  return (
+    <div>
+      <div>
+        {/* eslint-disable-next-line no-underscore-dangle */}
+        {response.user?._id}
+      </div>
+      <div>
+        {response.user?.email}
+      </div>
+    </div>
+  );
+};
 
 
 const App: React.FC = () => {
@@ -13,7 +44,11 @@ const App: React.FC = () => {
   return (
     <main>
       <Link to="/">Main</Link>
+      {' '}
       <Link to="counter">Counter</Link>
+      <Suspense fallback="Loading...">
+        <UserView />
+      </Suspense>
       <Routes>
         <Route
           path="/"

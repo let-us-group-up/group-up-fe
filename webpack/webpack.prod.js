@@ -51,6 +51,7 @@ module.exports = merge(common, {
           ],
           plugins: [
             require.resolve('@babel/plugin-transform-runtime'),
+            require.resolve('babel-plugin-relay'),
             [
               require.resolve('babel-plugin-formatjs'),
               { idInterpolationPattern: '[sha512:contenthash:base64:6]', ast: true },

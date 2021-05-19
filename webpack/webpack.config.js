@@ -1,4 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const RelayCompilerLanguageTypescript = require('relay-compiler-language-typescript').default;
+const RelayCompilerWebpackPlugin = require('relay-compiler-webpack-plugin');
 const path = require('path');
 
 
@@ -6,6 +8,12 @@ const htmlPlugin = new HtmlWebPackPlugin({
   filename: 'index.html',
   template: './public/index.ejs',
   favicon: './public/favicon.ico',
+});
+
+const relayCompilerWebpackPlugin = new RelayCompilerWebpackPlugin({
+  languagePlugin: RelayCompilerLanguageTypescript,
+  schema: path.resolve(__dirname, '..', 'schema.graphql'),
+  src: path.resolve(__dirname, '..', 'src'),
 });
 
 
@@ -70,5 +78,5 @@ module.exports = {
       },
     },
   },
-  plugins: [htmlPlugin],
+  plugins: [htmlPlugin, relayCompilerWebpackPlugin],
 };

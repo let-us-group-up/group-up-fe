@@ -8,10 +8,10 @@ export type {
   Location,
   PathMatch,
 } from './IRouter';
-export { default as Link } from './link';
-export { default as Route } from './route';
-export { default as Router } from './router';
-export { default as Routes } from './routes';
+export { default as Link } from './Link';
+export { default as Route } from './Route';
+export { default as Router } from './Router';
+export { default as Routes } from './Routes';
 export { default as useLocation } from './useLocation';
 export { default as useMatch } from './useMatch';
 export { default as useNavigate } from './useNavigate';

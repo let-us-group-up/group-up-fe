@@ -27,11 +27,7 @@
     "formatjs"
   ],
   "settings": {
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
-    }
+    "import/resolver": "typescript"
   },
   "rules": {
     "no-shadow": "off",
@@ -44,6 +40,7 @@
     "import/extensions": [2, {
       "ts": "never",
       "tsx": "never",
+      "graphql": "always",
       "json": "always"
     }],
     "react/jsx-uses-react": "off",

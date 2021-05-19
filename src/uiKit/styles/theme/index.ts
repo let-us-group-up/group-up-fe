@@ -1,5 +1,5 @@
 export {
   default as ThemeProvider,
   useThemeName,
-} from './themeProvider';
+} from './ThemeProvider';
 export { ThemeName } from './themesOptions';
