@@ -13,7 +13,7 @@ import { Routes, Route, Link } from './router';
 const userQuery = graphql`
   query AppQuery($id: ID!) {
     user(id: $id) {
-      _id
+      id
       email
     }
   }
@@ -25,8 +25,7 @@ const UserView: React.FC = () => {
   return (
     <div>
       <div>
-        {/* eslint-disable-next-line no-underscore-dangle */}
-        {response.user?._id}
+        {response.user?.id}
       </div>
       <div>
         {response.user?.email}

@@ -8,7 +8,7 @@ export type AppQueryVariables = {
 };
 export type AppQueryResponse = {
     readonly user: {
-        readonly _id: string;
+        readonly id: string;
         readonly email: string;
     } | null;
 };
@@ -24,7 +24,7 @@ query AppQuery(
   $id: ID!
 ) {
   user(id: $id) {
-    _id
+    id
     email
   }
 }
@@ -57,7 +57,7 @@ v1 = [
         "alias": null,
         "args": null,
         "kind": "ScalarField",
-        "name": "_id",
+        "name": "id",
         "storageKey": null
       },
       {
@@ -89,14 +89,14 @@ return {
     "selections": (v1/*: any*/)
   },
   "params": {
-    "cacheID": "a445270da36b6a9024bf02bb13bc6165",
+    "cacheID": "512535340e15521aa6c059891283886f",
     "id": null,
     "metadata": {},
     "name": "AppQuery",
     "operationKind": "query",
-    "text": "query AppQuery(\n  $id: ID!\n) {\n  user(id: $id) {\n    _id\n    email\n  }\n}\n"
+    "text": "query AppQuery(\n  $id: ID!\n) {\n  user(id: $id) {\n    id\n    email\n  }\n}\n"
   }
 };
 })();
-(node as any).hash = 'a4bf5e9456441e1c8bf458438069cc36';
+(node as any).hash = '727cafc9b989804566d00c4d70efbc97';
 export default node;
