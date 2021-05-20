@@ -1,3 +1,5 @@
+import config from 'config';
+
 type PayloadData = Record<string, unknown>;
 
 interface PayloadError {
@@ -53,7 +55,7 @@ const fetchGraphQL = async (
   text: string,
   variables: Record<string, unknown>,
 ): Promise<GraphQLResponse> => {
-  const response = await fetch('http://localhost:8080/graphql', {
+  const response = await fetch(`${config.url}/graphql`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
