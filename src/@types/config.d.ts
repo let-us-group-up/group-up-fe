@@ -1,4 +1,6 @@
 declare module 'config' {
-  const config: Record<string, never>;
+  const config: {
+    url: string;
+  };
   export default config;
 }

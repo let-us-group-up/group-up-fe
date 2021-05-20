@@ -14,7 +14,8 @@
     "extract": "formatjs extract 'src/**/*.ts*' --ignore **.d.ts --out-file lang/translations/en.json --id-interpolation-pattern '[sha512:contenthash:base64:6]' --format lang/formatter.js",
     "compile": "formatjs compile-folder --ast --format lang/formatter.js lang/translations lang/compiledTranslations",
     "syncTranslations": "ts-node -P lang/tsconfig.json lang/sync.ts",
-    "relay": "yarn run relay-compiler"
+    "relay": "yarn run relay-compiler",
+    "uploadSchema": "ts-node -P graphql/tsconfig.json graphql/uploadSchema.ts"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
