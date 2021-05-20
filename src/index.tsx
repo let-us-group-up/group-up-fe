@@ -1,15 +1,14 @@
 import ReactDOM from 'react-dom';
 import { RelayEnvironmentProvider } from 'react-relay/hooks';
+import browserStorage from '@libs/browserStorage';
+import { Router } from '@libs/router';
+import { environment } from '@libs/graphql';
 import { Language, defaultLanguage } from '../lang/constants';
 import LanguageProvider from './LanguageProvider';
 import App from './App';
-import browserStorage from './browserStorage';
-import { Router } from './router';
 import { localeStoreKey } from './constants';
-import relayEnvironment from './graphql/relayEnvironment';
 
 const root = document.getElementById('root') as HTMLElement;
-
 
 const loadLocaleData = async (locale: Language) => {
   switch (locale) {
@@ -25,7 +24,7 @@ const loadLocaleData = async (locale: Language) => {
 const bootstrapApplication = async (locale: Language, mainDiv: HTMLElement) => {
   const messages = await loadLocaleData(locale);
   ReactDOM.unstable_createRoot(mainDiv).render(
-    <RelayEnvironmentProvider environment={relayEnvironment}>
+    <RelayEnvironmentProvider environment={environment}>
       <LanguageProvider locale={locale} messages={messages}>
         <Router>
           <App />

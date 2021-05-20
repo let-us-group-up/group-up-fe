@@ -4,8 +4,8 @@ import {
   useMemo,
   useContext,
 } from 'react';
-import { IntlProvider, IntlProviderMessages } from './intl';
-import browserStorage from './browserStorage';
+import { IntlProvider, IntlProviderMessages } from '@libs/intl';
+import browserStorage from '@libs/browserStorage';
 import { localeStoreKey } from './constants';
 import { Language, defaultLanguage } from '../lang/constants';
 

@@ -1,6 +1,7 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const RelayCompilerLanguageTypescript = require('relay-compiler-language-typescript').default;
 const RelayCompilerWebpackPlugin = require('relay-compiler-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const path = require('path');
 
 
@@ -9,6 +10,8 @@ const htmlPlugin = new HtmlWebPackPlugin({
   template: './public/index.ejs',
   favicon: './public/favicon.ico',
 });
+
+const tsconfigPathsPlugin = new TsconfigPathsPlugin();
 
 const relayCompilerWebpackPlugin = new RelayCompilerWebpackPlugin({
   languagePlugin: RelayCompilerLanguageTypescript,
@@ -44,6 +47,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.json'],
+    plugins: [tsconfigPathsPlugin],
     alias: {
       '@formatjs/icu-messageformat-parser':
         '@formatjs/icu-messageformat-parser/no-parser',

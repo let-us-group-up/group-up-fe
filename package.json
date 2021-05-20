@@ -63,6 +63,7 @@
     "relay-compiler-webpack-plugin": "^9.1.0",
     "relay-config": "^11.0.2",
     "ts-node": "^9.1.1",
+    "tsconfig-paths-webpack-plugin": "^3.5.1",
     "type-fest": "^0.21.2",
     "typescript": "^4.2.4",
     "webpack": "^5.24.3",
