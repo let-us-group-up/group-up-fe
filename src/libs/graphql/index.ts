@@ -1,2 +1,2 @@
-/* eslint-disable import/prefer-default-export */
-export { default as environment } from './relayEnvironment';
+// eslint-disable-next-line import/prefer-default-export
+export { GraphQLResponse } from './IGraphQLResponse';
