@@ -3,24 +3,24 @@
 // @ts-nocheck
 
 import { ConcreteRequest } from "relay-runtime";
-export type AppQueryVariables = {
+export type UserViewQueryVariables = {
     id: string;
 };
-export type AppQueryResponse = {
+export type UserViewQueryResponse = {
     readonly user: {
         readonly id: string;
         readonly email: string;
     } | null;
 };
-export type AppQuery = {
-    readonly response: AppQueryResponse;
-    readonly variables: AppQueryVariables;
+export type UserViewQuery = {
+    readonly response: UserViewQueryResponse;
+    readonly variables: UserViewQueryVariables;
 };
 
 
 
 /*
-query AppQuery(
+query UserViewQuery(
   $id: ID!
 ) {
   user(id: $id) {
@@ -76,7 +76,7 @@ return {
     "argumentDefinitions": (v0/*: any*/),
     "kind": "Fragment",
     "metadata": null,
-    "name": "AppQuery",
+    "name": "UserViewQuery",
     "selections": (v1/*: any*/),
     "type": "Query",
     "abstractKey": null
@@ -85,18 +85,18 @@ return {
   "operation": {
     "argumentDefinitions": (v0/*: any*/),
     "kind": "Operation",
-    "name": "AppQuery",
+    "name": "UserViewQuery",
     "selections": (v1/*: any*/)
   },
   "params": {
-    "cacheID": "512535340e15521aa6c059891283886f",
+    "cacheID": "4cd4a8182f125448aef1617a6e1a2003",
     "id": null,
     "metadata": {},
-    "name": "AppQuery",
+    "name": "UserViewQuery",
     "operationKind": "query",
-    "text": "query AppQuery(\n  $id: ID!\n) {\n  user(id: $id) {\n    id\n    email\n  }\n}\n"
+    "text": "query UserViewQuery(\n  $id: ID!\n) {\n  user(id: $id) {\n    id\n    email\n  }\n}\n"
   }
 };
 })();
-(node as any).hash = '727cafc9b989804566d00c4d70efbc97';
+(node as any).hash = '4b6cc31aed07df1682d611be76d0d2a7';
 export default node;

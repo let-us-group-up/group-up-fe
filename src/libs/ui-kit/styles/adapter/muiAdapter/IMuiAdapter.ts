@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react';
 import { Theme as MuiTheme } from '@material-ui/core/styles';
 
-import { Variant } from '../../theme/ITheme';
+import { Variant } from '../../typography';
 import { IAdapter } from '../IAdapter';
 
 export type AdapterTheme = MuiTheme;

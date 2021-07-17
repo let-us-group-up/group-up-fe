@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import { RelayEnvironmentProvider } from 'react-relay/hooks';
-import browserStorage from '@libs/browserStorage';
+import browserStorage from '@libs/browser-storage';
 import { Router } from '@libs/router';
 import { Language, defaultLanguage } from '../lang/constants';
 import environment from './graphql/relayEnvironment';

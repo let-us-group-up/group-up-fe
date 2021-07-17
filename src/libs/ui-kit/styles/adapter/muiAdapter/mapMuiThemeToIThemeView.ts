@@ -7,13 +7,13 @@ import {
   ITheme,
   PaletteColorOptions,
   TypographyStyleOptions,
-  Variant,
   Direction,
   TransitionEasing,
   TransitionDuration,
   ZIndexVariant,
 } from '../../theme/ITheme';
 import { OverriddenMuiTypographyStyle } from './IMuiAdapter';
+import { Variant } from '../../typography';
 
 
 const mapBreakpoints = (muiThemeBreakpoints: MuiTheme['breakpoints']): ITheme['breakpoints'] => ({

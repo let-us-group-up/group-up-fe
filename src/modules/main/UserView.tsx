@@ -1,9 +1,9 @@
 import { graphql } from 'react-relay';
 import { useLazyLoadQuery } from 'react-relay/hooks';
-import { AppQuery } from 'graphql-types/AppQuery.graphql';
+import { UserViewQuery } from 'graphql-types/UserViewQuery.graphql';
 
 const userQuery = graphql`
-  query AppQuery($id: ID!) {
+  query UserViewQuery($id: ID!) {
     user(id: $id) {
       id
       email
@@ -12,7 +12,7 @@ const userQuery = graphql`
 `;
 
 const UserView: React.FC = () => {
-  const response = useLazyLoadQuery<AppQuery>(userQuery, { id: '6060cf5da9c9c12a83bc05a5' });
+  const response = useLazyLoadQuery<UserViewQuery>(userQuery, { id: '6060cf5da9c9c12a83bc05a5' });
 
   return (
     <div>

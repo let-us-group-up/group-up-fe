@@ -12,12 +12,12 @@ import {
   Breakpoint,
   PaletteColorOptions,
   TypographyStyleOptions,
-  Variant,
   Direction,
   TransitionEasing,
   TransitionDuration,
   ZIndexVariant,
 } from '../../theme/ITheme';
+import { Variant } from '../../typography';
 
 
 const mapBreakpoints = (

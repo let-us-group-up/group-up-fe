@@ -1,11 +1,11 @@
 import {
   IThemeOptions,
   Breakpoint,
-  Variant,
   TransitionEasing,
   TransitionDuration,
   ZIndexVariant,
 } from '../../ITheme';
+import { Variant } from '../../../typography';
 
 const theme: IThemeOptions = {
   breakpoints: {

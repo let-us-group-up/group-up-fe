@@ -5,7 +5,7 @@ import {
   useContext,
 } from 'react';
 import { IntlProvider, IntlProviderMessages } from '@libs/intl';
-import browserStorage from '@libs/browserStorage';
+import browserStorage from '@libs/browser-storage';
 import { localeStoreKey } from './constants';
 import { Language, defaultLanguage } from '../lang/constants';
 

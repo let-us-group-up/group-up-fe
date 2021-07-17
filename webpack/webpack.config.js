@@ -17,6 +17,7 @@ const relayCompilerWebpackPlugin = new RelayCompilerWebpackPlugin({
   languagePlugin: RelayCompilerLanguageTypescript,
   schema: path.resolve(__dirname, '..', 'schema.graphql'),
   src: path.resolve(__dirname, '..', 'src'),
+  artifactDirectory: path.resolve(__dirname, '..', 'src', '__generated__'),
 });
 
 

@@ -1,12 +1,11 @@
 import { Suspense } from 'react';
 import { useIntl } from '@libs/intl';
 import { useLanguage } from '../../LanguageProvider';
-import { Language } from '../../../lang/constants';
 import UserView from './UserView';
 
 const MainPage: React.FC = () => {
   const intl = useIntl();
-  const [language, changeLanguage] = useLanguage();
+  const [language] = useLanguage();
 
   return (
     <>
@@ -38,14 +37,6 @@ const MainPage: React.FC = () => {
           description: 'Language display',
         }, { language })}
       </h4>
-      <br />
-      <select
-        defaultValue={language}
-        onChange={({ target }) => changeLanguage(target.value as Language)}
-      >
-        <option value={Language.En}>EN</option>
-        <option value={Language.Ru}>RU</option>
-      </select>
     </>
   );
 };
