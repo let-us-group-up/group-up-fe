@@ -1,10 +1,11 @@
+import { useCallback } from 'react';
 import { useIntl } from '@libs/intl';
-// import { experimentalStyled } from '@material-ui/core/styles';
-// import Typography from '@material-ui/core/Typography';
 import { styled } from '@libs/ui-kit/styles';
 import AppBar from '@libs/ui-kit/components/AppBar';
 import IconButton from '@libs/ui-kit/components/IconButton';
 import Typography from '@libs/ui-kit/components/Typography';
+import Select from '@libs/ui-kit/components/Select';
+import Option from '@libs/ui-kit/components/Option';
 import MenuIcon from '@libs/ui-kit/icons/MenuIcon';
 import { useLanguage } from '../../LanguageProvider';
 import { Language } from '../../../lang/constants';
@@ -20,6 +21,10 @@ const StyledTypography = styled(Typography)(() => `
 const Header: React.FC = () => {
   const intl = useIntl();
   const [language, changeLanguage] = useLanguage();
+
+  const handleChangeLanguage = useCallback(({ target }: React.ChangeEvent<HTMLSelectElement>) => {
+    changeLanguage(target.value as Language);
+  }, [changeLanguage]);
 
   return (
     <AppBar>
@@ -37,13 +42,23 @@ const Header: React.FC = () => {
           description: 'Header title',
         })}
       </StyledTypography>
-      <select
-        defaultValue={language}
-        onChange={({ target }) => changeLanguage(target.value as Language)}
+      <Select
+        value={language}
+        onChange={handleChangeLanguage}
       >
-        <option value={Language.En}>EN</option>
-        <option value={Language.Ru}>RU</option>
-      </select>
+        <Option value={Language.En}>
+          {intl.formatMessage({
+            defaultMessage: 'EN',
+            description: 'English locale select option',
+          })}
+        </Option>
+        <Option value={Language.Ru}>
+          {intl.formatMessage({
+            defaultMessage: 'RU',
+            description: 'Russian locale select option',
+          })}
+        </Option>
+      </Select>
     </AppBar>
   );
 };
