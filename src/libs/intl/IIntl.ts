@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import { FC } from 'react';
+import { FC, VFC } from 'react';
 
 
 interface MessageDescriptor {
@@ -25,7 +25,7 @@ interface Formatters {
 export interface IIntl extends Formatters {}
 
 
-export type FormattedMessage = FC<MessageDescriptor & {
+export type FormattedMessage = VFC<MessageDescriptor & {
   values?: Values;
 }>;
 

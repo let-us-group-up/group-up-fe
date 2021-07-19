@@ -1,9 +1,8 @@
 interface OptionProps {
-  className?: string;
   value: string;
 }
 
-const Option: React.FC<OptionProps> = ({
+const Option: React.CFC<OptionProps> = ({
   children,
   className,
   value,

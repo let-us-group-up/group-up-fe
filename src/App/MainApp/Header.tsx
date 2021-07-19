@@ -18,7 +18,7 @@ const StyledTypography = styled(Typography)(() => `
   flex-grow: 1;
 `);
 
-const Header: React.FC = () => {
+const Header: React.VFC = () => {
   const intl = useIntl();
   const [language, changeLanguage] = useLanguage();
 

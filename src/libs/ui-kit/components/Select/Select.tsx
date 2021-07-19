@@ -1,10 +1,9 @@
 interface SelectProps {
-  className?: string;
   value: string;
   onChange: (value: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const Select: React.FC<SelectProps> = ({
+const Select: React.CFC<SelectProps> = ({
   children,
   className,
   value,

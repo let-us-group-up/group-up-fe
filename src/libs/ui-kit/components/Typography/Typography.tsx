@@ -30,7 +30,6 @@ const variantMapper = {
 };
 
 interface TypographyProps {
-  className?: string;
   /**
    * @default 'body1'
    */
@@ -45,7 +44,7 @@ interface TypographyProps {
   component?: `${TagVariant}`;
 }
 
-const Typography: React.FC<TypographyProps> = ({
+const Typography: React.CFC<TypographyProps> = ({
   children,
   className,
   variant = Variant.Body1,

@@ -69,6 +69,13 @@
       "rules": {
         "import/no-extraneous-dependencies": 0
       }
+    },
+    {
+      "files": ["./**/**.stories.ts", "./**/**.stories.tsx"],
+      "rules": {
+        "import/no-extraneous-dependencies": 0,
+        "react/jsx-props-no-spreading": 0
+      }
     }
   ]
 }

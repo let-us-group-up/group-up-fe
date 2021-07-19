@@ -16,7 +16,6 @@ enum Edge {
 }
 
 interface IconButtonProps {
-  className?: string;
   color: `${Color}`;
   /**
    * For now the large size same is as the medium
@@ -27,7 +26,7 @@ interface IconButtonProps {
   ariaLabel?: string;
 }
 
-const IconButton: React.FC<IconButtonProps> = ({
+const IconButton: React.CFC<IconButtonProps> = ({
   children,
   className,
   color,

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useIntl } from '@libs/intl';
 
-const CounterPage: React.FC = () => {
+const CounterPage: React.VFC = () => {
   const intl = useIntl();
   const [count, setCount] = useState(0);
 

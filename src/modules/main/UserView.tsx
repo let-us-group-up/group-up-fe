@@ -11,7 +11,7 @@ const userQuery = graphql`
   }
 `;
 
-const UserView: React.FC = () => {
+const UserView: React.VFC = () => {
   const response = useLazyLoadQuery<UserViewQuery>(userQuery, { id: '6060cf5da9c9c12a83bc05a5' });
 
   return (

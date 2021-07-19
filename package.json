@@ -15,7 +15,9 @@
     "compile": "formatjs compile-folder --ast --format lang/formatter.js lang/translations lang/compiledTranslations",
     "syncTranslations": "ts-node -P lang/tsconfig.json lang/sync.ts",
     "relay": "yarn run relay-compiler",
-    "uploadSchema": "ts-node -P graphql/tsconfig.json graphql/uploadSchema.ts"
+    "uploadSchema": "ts-node -P graphql/tsconfig.json graphql/uploadSchema.ts",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
@@ -26,6 +28,10 @@
     "@babel/preset-typescript": "^7.13.0",
     "@formatjs/cli": "^4.2.8",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
+    "@storybook/addon-actions": "^6.3.4",
+    "@storybook/addon-essentials": "^6.3.4",
+    "@storybook/addon-links": "^6.3.4",
+    "@storybook/react": "^6.3.4",
     "@types/color": "^3.0.1",
     "@types/js-cookie": "^2.2.6",
     "@types/node": "^14.14.31",

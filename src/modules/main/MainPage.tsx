@@ -3,7 +3,7 @@ import { useIntl } from '@libs/intl';
 import { useLanguage } from '../../LanguageProvider';
 import UserView from './UserView';
 
-const MainPage: React.FC = () => {
+const MainPage: React.VFC = () => {
   const intl = useIntl();
   const [language] = useLanguage();
 

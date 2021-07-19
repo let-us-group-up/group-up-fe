@@ -13,19 +13,15 @@ enum Variant {
 }
 
 interface ButtonProps {
-  className?: string;
   color: `${Color}`;
-  /**
-   * @default 'text'
-   */
   variant?: `${Variant}`;
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Button: React.CFC<ButtonProps> = ({
   children,
   className,
-  variant,
-  color,
+  variant = 'contained',
+  color = 'primary',
 }) => (
   <MuiButton
     className={className}

@@ -7,7 +7,7 @@ import MainPage from '../../modules/main/MainPage';
 import CounterPage from '../../modules/counter/CounterPage';
 
 
-const MainApp: React.FC = () => {
+const MainApp: React.VFC = () => {
   const intl = useIntl();
 
   return (

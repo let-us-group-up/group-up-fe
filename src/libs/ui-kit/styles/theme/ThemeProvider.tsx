@@ -39,8 +39,15 @@ const ThemeNameContext = createContext<ThemeNameContext>([
 export const useThemeName = (): ThemeNameContext => useContext(ThemeNameContext);
 
 
-const ThemeProvider: React.FC = ({ children }) => {
-  const [themeName, setThemeName] = useState<ThemeName>(defaultThemeName);
+interface ThemeProviderProps {
+  defaultTheme?: ThemeName;
+}
+
+const ThemeProvider: React.FC<ThemeProviderProps> = ({
+  children,
+  defaultTheme = defaultThemeName,
+}) => {
+  const [themeName, setThemeName] = useState<ThemeName>(defaultTheme);
 
   const handleChangeThemeName: ChangeThemeName = useCallback((newThemeName: ThemeName) => {
     setThemeName(newThemeName);
