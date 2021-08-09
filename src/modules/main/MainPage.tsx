@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import { useIntl } from '@libs/intl';
+import Button from '@libs/ui-kit/components/Button';
 import { useLanguage } from '../../LanguageProvider';
 import UserView from './UserView';
 
@@ -23,6 +24,8 @@ const MainPage: React.VFC = () => {
 
       <br />
       <br />
+
+      <Button color="secondary">Click</Button>
 
       <Suspense fallback="Loading...">
         <UserView />

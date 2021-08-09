@@ -15,9 +15,7 @@
     "compile": "formatjs compile-folder --ast --format lang/formatter.js lang/translations lang/compiledTranslations",
     "syncTranslations": "ts-node -P lang/tsconfig.json lang/sync.ts",
     "relay": "yarn run relay-compiler",
-    "uploadSchema": "ts-node -P graphql/tsconfig.json graphql/uploadSchema.ts",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "uploadSchema": "ts-node -P graphql/tsconfig.json graphql/uploadSchema.ts"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
@@ -28,15 +26,11 @@
     "@babel/preset-typescript": "^7.13.0",
     "@formatjs/cli": "^4.2.8",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
-    "@storybook/addon-actions": "^6.3.4",
-    "@storybook/addon-essentials": "^6.3.4",
-    "@storybook/addon-links": "^6.3.4",
-    "@storybook/react": "^6.3.4",
     "@types/color": "^3.0.1",
     "@types/js-cookie": "^2.2.6",
     "@types/node": "^14.14.31",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
+    "@types/react": "^17.0.15",
+    "@types/react-dom": "^17.0.9",
     "@types/react-intl": "^3.0.0",
     "@types/react-relay": "^11.0.1",
     "@types/relay-runtime": "^11.0.0",
@@ -71,7 +65,7 @@
     "ts-node": "^9.1.1",
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "type-fest": "^0.21.2",
-    "typescript": "^4.2.4",
+    "typescript": "^4.3.5",
     "webpack": "^5.24.3",
     "webpack-bundle-analyzer": "^4.4.0",
     "webpack-cli": "^4.5.0",
@@ -80,18 +74,16 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.14.0",
-    "@emotion/react": "^11.4.0",
-    "@emotion/styled": "^11.3.0",
-    "@material-ui/core": "^5.0.0-alpha.33",
-    "@material-ui/icons": "^5.0.0-beta.1",
-    "color": "^3.1.3",
     "history": "^5.0.0",
     "js-cookie": "^2.2.1",
-    "react": "^0.0.0-experimental-27659559e",
-    "react-dom": "^0.0.0-experimental-27659559e",
+    "react": "^18.0.0-alpha-c76e4dbbc-20210722",
+    "react-dom": "^18.0.0-alpha-c76e4dbbc-20210722",
     "react-intl": "^5.16.0",
     "react-relay": "^11.0.2",
     "react-router-dom": "^6.0.0-beta.0",
     "relay-runtime": "^11.0.2"
-  }
+  },
+  "bundledDependencies": [
+    "@libs/ui-kit"
+  ]
 }

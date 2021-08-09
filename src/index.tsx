@@ -23,7 +23,7 @@ const loadLocaleData = async (locale: Language) => {
 
 const bootstrapApplication = async (locale: Language, mainDiv: HTMLElement) => {
   const messages = await loadLocaleData(locale);
-  ReactDOM.unstable_createRoot(mainDiv).render(
+  ReactDOM.createRoot(mainDiv).render(
     <RelayEnvironmentProvider environment={environment}>
       <LanguageProvider locale={locale} messages={messages}>
         <Router>

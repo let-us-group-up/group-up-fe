@@ -1,12 +1,12 @@
 import { useCallback } from 'react';
 import { useIntl } from '@libs/intl';
-import { styled } from '@libs/ui-kit/styles';
 import AppBar from '@libs/ui-kit/components/AppBar';
-import IconButton from '@libs/ui-kit/components/IconButton';
 import Typography from '@libs/ui-kit/components/Typography';
 import Select from '@libs/ui-kit/components/Select';
 import Option from '@libs/ui-kit/components/Option';
+import IconButton from '@libs/ui-kit/components/IconButton';
 import MenuIcon from '@libs/ui-kit/icons/MenuIcon';
+import { styled } from '@libs/ui-kit/styles';
 import { useLanguage } from '../../LanguageProvider';
 import { Language } from '../../../lang/constants';
 
