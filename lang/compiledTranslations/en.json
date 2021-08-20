@@ -1,4 +1,10 @@
 {
+  "/fDVxE": [
+    {
+      "type": 0,
+      "value": "Main"
+    }
+  ],
   "6kxKGK": [
     {
       "type": 0,
@@ -45,6 +51,12 @@
       "value": "."
     }
   ],
+  "EYoUKO": [
+    {
+      "type": 0,
+      "value": "EN"
+    }
+  ],
   "Mlh9AI": [
     {
       "type": 0,
@@ -69,6 +81,24 @@
     {
       "type": 1,
       "value": "language"
+    }
+  ],
+  "c+TfZ5": [
+    {
+      "type": 0,
+      "value": "Counter"
+    }
+  ],
+  "hbrpOR": [
+    {
+      "type": 0,
+      "value": "The best app ever"
+    }
+  ],
+  "xasHcG": [
+    {
+      "type": 0,
+      "value": "RU"
     }
   ]
 }

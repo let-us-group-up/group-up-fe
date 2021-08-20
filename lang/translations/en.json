@@ -1,5 +1,35 @@
 [
   {
+    "comment": "Header title",
+    "definition": "The best app ever",
+    "term": "hbrpOR"
+  },
+  {
+    "comment": "English locale select option",
+    "definition": "EN",
+    "term": "EYoUKO"
+  },
+  {
+    "comment": "Russian locale select option",
+    "definition": "RU",
+    "term": "xasHcG"
+  },
+  {
+    "comment": "Link to the main page",
+    "definition": "Main",
+    "term": "/fDVxE"
+  },
+  {
+    "comment": "Link to the counter page",
+    "definition": "Counter",
+    "term": "c+TfZ5"
+  },
+  {
+    "comment": "Plural",
+    "definition": "You have {itemCount, plural, =0 {no items} one {1 item} other {{itemCount} items} }.",
+    "term": "6kxKGK"
+  },
+  {
     "comment": "Main message",
     "definition": "Let's group up FE",
     "term": "Mlh9AI"
@@ -13,10 +43,5 @@
     "comment": "Language display",
     "definition": "Current language is {language}",
     "term": "ZUYNio"
-  },
-  {
-    "comment": "Plural",
-    "definition": "You have {itemCount, plural, =0 {no items} one {1 item} other {{itemCount} items} }.",
-    "term": "6kxKGK"
   }
 ]
