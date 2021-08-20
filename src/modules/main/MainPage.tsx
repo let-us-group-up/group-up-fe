@@ -1,23 +1,25 @@
 import { Suspense } from 'react';
 import { useIntl } from '@libs/intl';
-import Button from '@libs/ui-kit/components/Button';
-import { useLanguage } from '../../LanguageProvider';
-import UserView from './UserView';
+import Typography from '@libs/ui-kit/components/Typography';
+// import Button from '@libs/ui-kit/components/Button';
+// import { useLanguage } from '../../LanguageProvider';
+// import UserView from './UserView';
+import NextEventView from './NextEventView';
 
 const MainPage: React.VFC = () => {
   const intl = useIntl();
-  const [language] = useLanguage();
+  // const [language] = useLanguage();
 
   return (
     <>
-      <h1>
+      <Typography variant="h1">
         {intl.formatMessage({
           defaultMessage: "Let's group up FE",
           description: 'Main message',
         })}
-      </h1>
+      </Typography>
 
-      {intl.formatMessage({
+      {/* {intl.formatMessage({
         defaultMessage: "Wow that's awesome and {value}",
         description: 'Second message',
       }, { value: 'cool' })}
@@ -29,8 +31,12 @@ const MainPage: React.VFC = () => {
 
       <Suspense fallback="Loading...">
         <UserView />
-      </Suspense>
+      </Suspense> */}
 
+      <Suspense fallback="Loading...">
+        <NextEventView />
+      </Suspense>
+      {/*
       <br />
       <br />
 
@@ -39,7 +45,7 @@ const MainPage: React.VFC = () => {
           defaultMessage: 'Current language is {language}',
           description: 'Language display',
         }, { language })}
-      </h4>
+      </h4> */}
     </>
   );
 };

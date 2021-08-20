@@ -4,6 +4,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const path = require('path');
 
 const common = require('./webpack.config.js');
 const config = require('../config/development.json');
@@ -106,5 +107,13 @@ module.exports = merge(common, {
   },
   externals: {
     config: JSON.stringify(config),
+  },
+  watchOptions: {
+    ignored: [
+      path.resolve(__dirname, 'dist'),
+      path.resolve(__dirname, 'node_modules'),
+      '/home/artem/.config/yarn/link/react',
+      '/home/artem/.config/yarn/link/react-dom',
+    ],
   },
 });
