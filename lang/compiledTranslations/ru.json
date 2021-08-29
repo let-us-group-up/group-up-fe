@@ -1,4 +1,10 @@
 {
+  "/fDVxE": [
+    {
+      "type": 0,
+      "value": "Главная"
+    }
+  ],
   "6kxKGK": [
     {
       "type": 0,
@@ -45,30 +51,40 @@
       "value": "."
     }
   ],
+  "EYoUKO": [
+    {
+      "type": 0,
+      "value": "EN"
+    }
+  ],
   "Mlh9AI": [
     {
       "type": 0,
       "value": "Let's group up FE RU"
     }
   ],
-  "VpoyIB": [
+  "Pe/LlU": [
     {
       "type": 0,
-      "value": "Few, I hope it works "
-    },
-    {
-      "type": 1,
-      "value": "value"
+      "value": "Маленькое описание на русском языке"
     }
   ],
-  "ZUYNio": [
+  "c+TfZ5": [
     {
       "type": 0,
-      "value": "Текущий язык - "
-    },
+      "value": "Счётчик"
+    }
+  ],
+  "hbrpOR": [
     {
-      "type": 1,
-      "value": "language"
+      "type": 0,
+      "value": "Люшее прилаженне"
+    }
+  ],
+  "xasHcG": [
+    {
+      "type": 0,
+      "value": "RU"
     }
   ]
 }
