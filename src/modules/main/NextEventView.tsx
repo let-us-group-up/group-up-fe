@@ -42,7 +42,7 @@ const NextEventView: React.VFC = () => {
 
   return (
     <EventViewMarkup
-      title={<Title>Title</Title>}
+      title={<Title>{event?.title}</Title>}
       dataAndTime={<DateAndTime>Date and Time</DateAndTime>}
       description={(
         <Description>
