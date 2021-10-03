@@ -2,5 +2,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "jsx": "react-jsxdev"
-  }
+  },
+  "types": [
+    "react-dom/experimental",
+    "jest"
+  ]
 }
