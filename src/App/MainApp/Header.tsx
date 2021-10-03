@@ -18,7 +18,13 @@ const StyledTypography = styled(Typography)(() => `
   flex-grow: 1;
 `);
 
-const Header: React.VFC = () => {
+interface HeaderProps {
+  onMenuIconClick: () => void;
+}
+
+const Header: React.VFC<HeaderProps> = ({
+  onMenuIconClick,
+}) => {
   const intl = useIntl();
   const [language, changeLanguage] = useLanguage();
 
@@ -33,6 +39,7 @@ const Header: React.VFC = () => {
         edge="start"
         color="inherit"
         aria-label="menu"
+        onClick={onMenuIconClick}
       >
         <MenuIcon />
       </StyledIconButton>
