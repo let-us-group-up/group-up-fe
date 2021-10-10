@@ -27,7 +27,17 @@ const Navigation: React.VFC<NavigationProps> = ({
               description: 'Link to the main page',
             })}
           </Link>
-          )}
+        )}
+      />
+      <NavigationItem
+        link={(
+          <Link to="events" onClick={handleLinkClick}>
+            {intl.formatMessage({
+              defaultMessage: 'Events',
+              description: 'Link to the events page',
+            })}
+          </Link>
+        )}
       />
       <NavigationItem
         link={(
@@ -37,7 +47,7 @@ const Navigation: React.VFC<NavigationProps> = ({
               description: 'Link to the counter page',
             })}
           </Link>
-          )}
+        )}
       />
     </NavigationList>
   );

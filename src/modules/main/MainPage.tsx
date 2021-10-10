@@ -1,9 +1,10 @@
 import { Suspense } from 'react';
 import { useIntl } from '@libs/intl';
 import Typography from '@libs/ui-kit/components/Typography';
+import { PageComponent } from '../Page';
 import NextEventView from './NextEventView';
 
-const MainPage: React.VFC = () => {
+const MainPage: PageComponent = () => {
   const intl = useIntl();
 
   return (

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useIntl } from '@libs/intl';
+import { PageComponent } from '../Page';
 
-const CounterPage: React.VFC = () => {
+const CounterPage: PageComponent = () => {
   const intl = useIntl();
   const [count, setCount] = useState(0);
 

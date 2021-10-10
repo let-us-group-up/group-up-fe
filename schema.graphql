@@ -42,6 +42,7 @@ enum Provider {
 
 type Query {
   event(id: ID!): Event
+  events: [Event]!
   user(id: ID!): User
 }
 

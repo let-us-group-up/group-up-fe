@@ -81,8 +81,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.14.0",
-    "react": "^18.0.0-alpha-c76e4dbbc-20210722",
-    "react-dom": "^18.0.0-alpha-c76e4dbbc-20210722",
+    "react": "^18.0.0-alpha-5fa4d79b0-20211008",
+    "react-dom": "^18.0.0-alpha-5fa4d79b0-20211008",
     "react-relay": "^11.0.2",
     "relay-runtime": "^11.0.2"
   },
