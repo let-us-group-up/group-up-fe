@@ -3,6 +3,7 @@
 // @ts-nocheck
 
 import { ConcreteRequest } from "relay-runtime";
+
 export type Roles = "Organizer" | "Participant" | "%future added value";
 export type NextEventViewQueryVariables = {
     id: string;

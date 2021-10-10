@@ -40,7 +40,7 @@ const EventsPage: PageComponent = () => {
   return (
     <main>
       <Suspense fallback="Loading...">
-        {queryReference != null ? <Events queryRef={queryReference} /> : null}
+        {queryReference != null ? <Events queryRef={queryReference} /> : 'Loading...'}
       </Suspense>
     </main>
   );

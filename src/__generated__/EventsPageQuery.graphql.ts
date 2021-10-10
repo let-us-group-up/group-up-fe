@@ -3,6 +3,7 @@
 // @ts-nocheck
 
 import { ConcreteRequest } from "relay-runtime";
+
 export type Roles = "Organizer" | "Participant" | "%future added value";
 export type EventsPageQueryVariables = {};
 export type EventsPageQueryResponse = {
@@ -23,7 +24,7 @@ export type EventsPageQueryResponse = {
                 readonly email: string;
             } | null;
         }>;
-    } | null>;
+    }>;
 };
 export type EventsPageQuery = {
     readonly response: EventsPageQueryResponse;
