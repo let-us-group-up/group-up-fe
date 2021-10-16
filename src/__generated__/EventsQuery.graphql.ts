@@ -11,18 +11,12 @@ export type EventsQueryResponse = {
         readonly id: string;
         readonly title: string;
         readonly dateAndTime: unknown | null;
-        readonly description: string | null;
         readonly address: {
-            readonly id: string;
             readonly address1: string;
             readonly address2: string;
         } | null;
         readonly participants: ReadonlyArray<{
             readonly role: Roles;
-            readonly user: {
-                readonly id: string;
-                readonly email: string;
-            } | null;
         }>;
     }>;
 };
@@ -39,18 +33,13 @@ query EventsQuery {
     id
     title
     dateAndTime
-    description
     address {
-      id
       address1
       address2
+      id
     }
     participants {
       role
-      user {
-        id
-        email
-      }
     }
   }
 }
@@ -64,111 +53,88 @@ var v0 = {
   "name": "id",
   "storageKey": null
 },
-v1 = [
-  {
-    "alias": null,
-    "args": null,
-    "concreteType": "Event",
-    "kind": "LinkedField",
-    "name": "events",
-    "plural": true,
-    "selections": [
-      (v0/*: any*/),
-      {
-        "alias": null,
-        "args": null,
-        "kind": "ScalarField",
-        "name": "title",
-        "storageKey": null
-      },
-      {
-        "alias": null,
-        "args": null,
-        "kind": "ScalarField",
-        "name": "dateAndTime",
-        "storageKey": null
-      },
-      {
-        "alias": null,
-        "args": null,
-        "kind": "ScalarField",
-        "name": "description",
-        "storageKey": null
-      },
-      {
-        "alias": null,
-        "args": null,
-        "concreteType": "Address",
-        "kind": "LinkedField",
-        "name": "address",
-        "plural": false,
-        "selections": [
-          (v0/*: any*/),
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "address1",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "address2",
-            "storageKey": null
-          }
-        ],
-        "storageKey": null
-      },
-      {
-        "alias": null,
-        "args": null,
-        "concreteType": "Participant",
-        "kind": "LinkedField",
-        "name": "participants",
-        "plural": true,
-        "selections": [
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "role",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "concreteType": "User",
-            "kind": "LinkedField",
-            "name": "user",
-            "plural": false,
-            "selections": [
-              (v0/*: any*/),
-              {
-                "alias": null,
-                "args": null,
-                "kind": "ScalarField",
-                "name": "email",
-                "storageKey": null
-              }
-            ],
-            "storageKey": null
-          }
-        ],
-        "storageKey": null
-      }
-    ],
-    "storageKey": null
-  }
-];
+v1 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "title",
+  "storageKey": null
+},
+v2 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "dateAndTime",
+  "storageKey": null
+},
+v3 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "address1",
+  "storageKey": null
+},
+v4 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "address2",
+  "storageKey": null
+},
+v5 = {
+  "alias": null,
+  "args": null,
+  "concreteType": "Participant",
+  "kind": "LinkedField",
+  "name": "participants",
+  "plural": true,
+  "selections": [
+    {
+      "alias": null,
+      "args": null,
+      "kind": "ScalarField",
+      "name": "role",
+      "storageKey": null
+    }
+  ],
+  "storageKey": null
+};
 return {
   "fragment": {
     "argumentDefinitions": [],
     "kind": "Fragment",
     "metadata": null,
     "name": "EventsQuery",
-    "selections": (v1/*: any*/),
+    "selections": [
+      {
+        "alias": null,
+        "args": null,
+        "concreteType": "Event",
+        "kind": "LinkedField",
+        "name": "events",
+        "plural": true,
+        "selections": [
+          (v0/*: any*/),
+          (v1/*: any*/),
+          (v2/*: any*/),
+          {
+            "alias": null,
+            "args": null,
+            "concreteType": "Address",
+            "kind": "LinkedField",
+            "name": "address",
+            "plural": false,
+            "selections": [
+              (v3/*: any*/),
+              (v4/*: any*/)
+            ],
+            "storageKey": null
+          },
+          (v5/*: any*/)
+        ],
+        "storageKey": null
+      }
+    ],
     "type": "Query",
     "abstractKey": null
   },
@@ -177,17 +143,47 @@ return {
     "argumentDefinitions": [],
     "kind": "Operation",
     "name": "EventsQuery",
-    "selections": (v1/*: any*/)
+    "selections": [
+      {
+        "alias": null,
+        "args": null,
+        "concreteType": "Event",
+        "kind": "LinkedField",
+        "name": "events",
+        "plural": true,
+        "selections": [
+          (v0/*: any*/),
+          (v1/*: any*/),
+          (v2/*: any*/),
+          {
+            "alias": null,
+            "args": null,
+            "concreteType": "Address",
+            "kind": "LinkedField",
+            "name": "address",
+            "plural": false,
+            "selections": [
+              (v3/*: any*/),
+              (v4/*: any*/),
+              (v0/*: any*/)
+            ],
+            "storageKey": null
+          },
+          (v5/*: any*/)
+        ],
+        "storageKey": null
+      }
+    ]
   },
   "params": {
-    "cacheID": "b8d29cec5d7469f24fbf278fbce597ee",
+    "cacheID": "abef3e0983c283d9919dc19dcc10e6e7",
     "id": null,
     "metadata": {},
     "name": "EventsQuery",
     "operationKind": "query",
-    "text": "query EventsQuery {\n  events {\n    id\n    title\n    dateAndTime\n    description\n    address {\n      id\n      address1\n      address2\n    }\n    participants {\n      role\n      user {\n        id\n        email\n      }\n    }\n  }\n}\n"
+    "text": "query EventsQuery {\n  events {\n    id\n    title\n    dateAndTime\n    address {\n      address1\n      address2\n      id\n    }\n    participants {\n      role\n    }\n  }\n}\n"
   }
 };
 })();
-(node as any).hash = '023e4001c5bb827bf340e79e9c327708';
+(node as any).hash = '2fcd24dcee6a95665725ea94cc01ffd8';
 export default node;

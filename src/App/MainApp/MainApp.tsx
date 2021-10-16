@@ -4,7 +4,6 @@ import PageContainer from './PageContainer';
 import PageContent from './PageContent';
 import Header from './Header';
 import MainPage from '../../modules/main/MainPage';
-import CounterPage from '../../modules/counter/CounterPage';
 import EventsPage from '../../modules/events/EventsPage';
 
 import NavigationDrawer from './Navigation/NavigationDrawer';
@@ -42,10 +41,6 @@ const MainApp: React.VFC = () => {
           <Route
             path="/"
             element={<MainPage />}
-          />
-          <Route
-            path="counter"
-            element={<CounterPage />}
           />
           <Route
             path="events"

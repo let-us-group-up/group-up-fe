@@ -39,16 +39,6 @@ const Navigation: React.VFC<NavigationProps> = ({
           </Link>
         )}
       />
-      <NavigationItem
-        link={(
-          <Link to="counter" onClick={handleLinkClick}>
-            {intl.formatMessage({
-              defaultMessage: 'Counter',
-              description: 'Link to the counter page',
-            })}
-          </Link>
-        )}
-      />
     </NavigationList>
   );
 };

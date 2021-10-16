@@ -21,18 +21,12 @@ const eventsQuery = graphql`
       id
       title
       dateAndTime
-      description
       address {
-        id
         address1
         address2
       }
       participants {
         role
-        user {
-          id
-          email
-        }
       }
     }
   }

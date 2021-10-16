@@ -25,6 +25,10 @@ export type EventsPageQueryResponse = {
             } | null;
         }>;
     }>;
+    readonly user: {
+        readonly id: string;
+        readonly email: string;
+    } | null;
 };
 export type EventsPageQuery = {
     readonly response: EventsPageQueryResponse;
@@ -53,6 +57,10 @@ query EventsPageQuery {
       }
     }
   }
+  user(id: "6060cf5da9c9c12a83bc05a5") {
+    id
+    email
+  }
 }
 */
 
@@ -65,6 +73,16 @@ var v0 = {
   "storageKey": null
 },
 v1 = [
+  (v0/*: any*/),
+  {
+    "alias": null,
+    "args": null,
+    "kind": "ScalarField",
+    "name": "email",
+    "storageKey": null
+  }
+],
+v2 = [
   {
     "alias": null,
     "args": null,
@@ -143,16 +161,7 @@ v1 = [
             "kind": "LinkedField",
             "name": "user",
             "plural": false,
-            "selections": [
-              (v0/*: any*/),
-              {
-                "alias": null,
-                "args": null,
-                "kind": "ScalarField",
-                "name": "email",
-                "storageKey": null
-              }
-            ],
+            "selections": (v1/*: any*/),
             "storageKey": null
           }
         ],
@@ -160,6 +169,22 @@ v1 = [
       }
     ],
     "storageKey": null
+  },
+  {
+    "alias": null,
+    "args": [
+      {
+        "kind": "Literal",
+        "name": "id",
+        "value": "6060cf5da9c9c12a83bc05a5"
+      }
+    ],
+    "concreteType": "User",
+    "kind": "LinkedField",
+    "name": "user",
+    "plural": false,
+    "selections": (v1/*: any*/),
+    "storageKey": "user(id:\"6060cf5da9c9c12a83bc05a5\")"
   }
 ];
 return {
@@ -168,7 +193,7 @@ return {
     "kind": "Fragment",
     "metadata": null,
     "name": "EventsPageQuery",
-    "selections": (v1/*: any*/),
+    "selections": (v2/*: any*/),
     "type": "Query",
     "abstractKey": null
   },
@@ -177,17 +202,17 @@ return {
     "argumentDefinitions": [],
     "kind": "Operation",
     "name": "EventsPageQuery",
-    "selections": (v1/*: any*/)
+    "selections": (v2/*: any*/)
   },
   "params": {
-    "cacheID": "e24f9277fd9cce09b4607f38f0716f93",
+    "cacheID": "2576d7fb23efd7a50aa0b2ca171414b5",
     "id": null,
     "metadata": {},
     "name": "EventsPageQuery",
     "operationKind": "query",
-    "text": "query EventsPageQuery {\n  events {\n    id\n    title\n    dateAndTime\n    description\n    address {\n      id\n      address1\n      address2\n    }\n    participants {\n      role\n      user {\n        id\n        email\n      }\n    }\n  }\n}\n"
+    "text": "query EventsPageQuery {\n  events {\n    id\n    title\n    dateAndTime\n    description\n    address {\n      id\n      address1\n      address2\n    }\n    participants {\n      role\n      user {\n        id\n        email\n      }\n    }\n  }\n  user(id: \"6060cf5da9c9c12a83bc05a5\") {\n    id\n    email\n  }\n}\n"
   }
 };
 })();
-(node as any).hash = 'ae0dfe883951e808de70734361eb3ab2';
+(node as any).hash = '7e5ec82faa0eb25dde55c7eb4cc44b8e';
 export default node;
