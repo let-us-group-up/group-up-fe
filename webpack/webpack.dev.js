@@ -82,6 +82,9 @@ module.exports = merge(common, {
     definePlugin,
     eSLintPlugin,
   ],
+  output: {
+    publicPath: '/',
+  },
   devServer: {
     disableHostCheck: true,
     port: process.env.PORT || defaultPort,

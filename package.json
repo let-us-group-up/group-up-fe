@@ -92,6 +92,7 @@
     "@libs/intl",
     "@libs/router",
     "@libs/graphql",
-    "@libs/event-view"
+    "@libs/event-view",
+    "@libs/form"
   ]
 }

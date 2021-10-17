@@ -50,6 +50,7 @@ const Header: React.VFC<HeaderProps> = ({
         })}
       </StyledTypography>
       <Select
+        id="language-select"
         value={language}
         onChange={handleChangeLanguage}
       >
